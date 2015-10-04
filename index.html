@@ -39,13 +39,12 @@
 
 <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tag Cloud">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="Daisenho's Notes">
+<meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Daisenho's Notes">
 <meta property="og:description">
-<meta property="og:updated_time" content="2015-10-04T11:51:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tag Cloud">
+<meta name="twitter:title" content="Daisenho's Notes">
 <meta name="twitter:description">
 
 
@@ -56,13 +55,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    标签 | Daisenho's Notes
-  
-</title>
+  <title> Daisenho's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -90,7 +83,9 @@
 
 
 
-  <div class="container one-column ">
+  <div class="container one-column 
+   page-home 
+">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -166,21 +161,113 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <div id="posts" class="posts-expand">
-    
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 2 个标签
-        </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/blog/" style="font-size: 12px; color: #ccc">blog</a> <a href="/tags/nodejs/" style="font-size: 12px; color: #ccc">nodejs</a>
-        </div>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/10/04/hello-world/" itemprop="url">
+                hello world
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-04T23:11:34+08:00" content="2015-10-04">
+            2015-10-04
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/nodejs/" itemprop="url" rel="index">
+                  <span itemprop="name">nodejs</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/04/hello-world/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/04/hello-world/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
       </div>
-    
-  </div>
+    </header>
 
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><img src="/uploads/hello-world/hello-world.jpg" alt="起跑"></p>
+<p>一直想在github上建个博客，无奈执行力太差，一拖就是两年，这次乘着国庆值班的空档(<em>国庆放七天假，值班五天，说多了都是泪</em>)，终于搭建起来了。第一篇文章肯定是码农功夫中的起手式:<strong>hello world</strong>，介绍一下搭建博客所使用的积木。</p>
+<p>由于所使用的插件，网上的资料是在是太多了，这里只列清单，不做教程，欢迎吐槽:)</p>
+<h2 id="环境准备">环境准备</h2><ul>
+<li>nodejs</li>
+<li>git</li>
+</ul>
+<h2 id="blog模版引擎hexo">blog模版引擎hexo</h2><p>使用的是基于nodejs所开发的<a href="https://hexo.io" target="_blank" rel="external">hexo</a>  </p>
+<h4 id="额外安装的插件：">额外安装的插件：</h4><ul>
+<li>hexo-server 启动本地服务，方便调试</li>
+<li>hexo-deployer-git 一个命令便可以便捷的将编译好的静态代码上传到git服务器</li>
+</ul>
+<h4 id="集成的服务">集成的服务</h4><ul>
+<li>github 使用github的pages服务运行静态页面</li>
+<li>多说 集成评论模块<a href="http://duoshuo.com" target="_blank" rel="external">多说</a></li>
+<li>百度统计 集成站长工具</li>
+</ul>
+<h2 id="blog模板主题NexT">blog模板主题NexT</h2><p>使用的模版主题是<a href="http://theme-next.iissnan.com" target="_blank" rel="external">NexT</a></p>
+<h2 id="github">github</h2><p>需要申请github账号，pages服务说明请移步到<a href="https://pages.github.com" target="_blank" rel="external">这里</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
  </div>
 
         
