@@ -37,20 +37,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="http://7xn9a6.com1.z0.glb.clouddn.com/static/myicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="背景公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。
-一些定义过载：系统的负载达到一定程度后，系统的服务能力随负载的增加急剧下降，下降的诱因可能是cpu、内存、网络带宽等达到瓶颈。过载保护：在负载增加到">
+<meta name="description" content="背景公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="下载限速的思路与实现">
 <meta property="og:url" content="http://yoursite.com/2015/10/05/dowmload-rate-limit/index.html">
 <meta property="og:site_name" content="Daisenho's Notes">
-<meta property="og:description" content="背景公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。
-一些定义过载：系统的负载达到一定程度后，系统的服务能力随负载的增加急剧下降，下降的诱因可能是cpu、内存、网络带宽等达到瓶颈。过载保护：在负载增加到">
+<meta property="og:description" content="背景公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。">
 <meta property="og:image" content="http://7xn9a6.com1.z0.glb.clouddn.com/static/download-rate-limit/download-rate-limit.jpg?imageView2/2/w/500/">
-<meta property="og:updated_time" content="2015-10-05T14:13:27.000Z">
+<meta property="og:updated_time" content="2015-10-05T14:40:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="下载限速的思路与实现">
-<meta name="twitter:description" content="背景公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。
-一些定义过载：系统的负载达到一定程度后，系统的服务能力随负载的增加急剧下降，下降的诱因可能是cpu、内存、网络带宽等达到瓶颈。过载保护：在负载增加到">
+<meta name="twitter:description" content="背景公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -228,7 +225,7 @@
 
       
         <span itemprop="articleBody"><p><img src="http://7xn9a6.com1.z0.glb.clouddn.com/static/download-rate-limit/download-rate-limit.jpg?imageView2/2/w/500/" alt="限流"></p>
-<h2 id="背景">背景</h2><p>公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。</p>
+<h2 id="背景">背景</h2><p>公司和某个渠道方每天的交易量特别大，系统监控发现每天早晨的某个时间段，交易成功率会暴跌，经排查，那个时间段刚好是任务调度触发获取账单的任务，由于账单文件太大（几G），会将网络带宽占满，导致正常交易出现大量超时，那么，下载限速就成为亟需完成的功能。<br><a id="more"></a></p>
 <h2 id="一些定义">一些定义</h2><p><strong>过载</strong>：系统的负载达到一定程度后，系统的服务能力随负载的增加急剧下降，下降的诱因可能是cpu、内存、网络带宽等达到瓶颈。<br><strong>过载保护</strong>：在负载增加到一定程度的情况下，采用拒绝服务、等待/延时/异步处理、分流等技术手段，保证系统服务能力的稳定。</p>
 <h2 id="下载限速分析">下载限速分析</h2><p>下载简单的说就是从输入流读取数据，写入输出流里面。限速就是要限制从输入流读取数据的频率，是最简单的过载保护情形。常见的限流算法有Leaky Bucket 与 Token Bucket 算法:</p>
 <ul>
