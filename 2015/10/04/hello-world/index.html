@@ -34,7 +34,7 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/uploads/myicon.ico?v=0.4.5.1" />
+  <link rel="shorticon icon" type="image/x-icon" href="http://7xn9a6.com1.z0.glb.clouddn.com/static/myicon.ico?v=0.4.5.1" />
 
 
 <meta name="description" content="一直想在github上建个博客，无奈执行力太差，一拖就是两年，这次乘着国庆值班的空档(国庆放七天假，值班五天，说多了都是泪)，终于搭建起来了。第一篇文章肯定是码农功夫中的起手式:hello world，介绍一下搭建博客所使用的积木。
@@ -55,8 +55,8 @@ nodejs
 git
 
 blog模版引擎hexo使用的是基于nodejs所开">
-<meta property="og:image" content="http://yoursite.com/uploads/hello-world/hello-world.jpg">
-<meta property="og:updated_time" content="2015-10-05T05:14:29.000Z">
+<meta property="og:image" content="http://7xn9a6.com1.z0.glb.clouddn.com/static/hello-world/hello-world.jpg">
+<meta property="og:updated_time" content="2015-10-05T08:46:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello world">
 <meta name="twitter:description" content="一直想在github上建个博客，无奈执行力太差，一拖就是两年，这次乘着国庆值班的空档(国庆放七天假，值班五天，说多了都是泪)，终于搭建起来了。第一篇文章肯定是码农功夫中的起手式:hello world，介绍一下搭建博客所使用的积木。
@@ -242,9 +242,9 @@ blog模版引擎hexo使用的是基于nodejs所开">
       
 
       
-        <span itemprop="articleBody"><p><img src="/uploads/hello-world/hello-world.jpg" alt="起跑"></p>
+        <span itemprop="articleBody"><p><img src="http://7xn9a6.com1.z0.glb.clouddn.com/static/hello-world/hello-world.jpg" alt="起跑"></p>
 <p>一直想在github上建个博客，无奈执行力太差，一拖就是两年，这次乘着国庆值班的空档(<em>国庆放七天假，值班五天，说多了都是泪</em>)，终于搭建起来了。第一篇文章肯定是码农功夫中的起手式:<strong>hello world</strong>，介绍一下搭建博客所使用的积木。</p>
-<p>由于所使用的插件，网上的资料是在是太多了，这里只列清单，不做教程，欢迎吐槽:)</p>
+<p><em>由于所使用的插件，网上的资料是在是太多了，这里只列清单，不做教程，欢迎吐槽:)</em></p>
 <h2 id="环境准备">环境准备</h2><ul>
 <li>nodejs</li>
 <li>git</li>
@@ -253,6 +253,7 @@ blog模版引擎hexo使用的是基于nodejs所开">
 <h4 id="额外安装的插件：">额外安装的插件：</h4><ul>
 <li>hexo-server 启动本地服务，方便调试</li>
 <li>hexo-deployer-git 一个命令便可以便捷的将编译好的静态代码上传到git服务器</li>
+<li><em>hexo-qiniu-sync 将静态文件一个命令同步到七牛上去的便利插件</em></li>
 </ul>
 <h4 id="集成的服务">集成的服务</h4><ul>
 <li>github 使用github的pages服务运行静态页面</li>
@@ -261,6 +262,7 @@ blog模版引擎hexo使用的是基于nodejs所开">
 </ul>
 <h2 id="blog模板主题NexT">blog模板主题NexT</h2><p>使用的模版主题是<a href="http://theme-next.iissnan.com" target="_blank" rel="external">NexT</a></p>
 <h2 id="github">github</h2><p>需要申请github账号，pages服务说明请移步到<a href="https://pages.github.com" target="_blank" rel="external">这里</a></p>
+<h2 id="图片托管">图片托管</h2><p>github在国内访问比较慢，所以将加载耗时最严重的文件存储在七牛上，可以使用hexo插件<strong>hexo-qiniu-sync</strong>简化操作，不过我还是直接用qiniu的命令行工具做文件夹同步，不要问我为什么，喜欢折腾。</p>
 </span>
       
     </div>
@@ -331,7 +333,7 @@ blog模版引擎hexo使用的是基于nodejs所开">
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/uploads/me.jpg" alt="Daisen Ho" itemprop="image"/>
+          <img class="site-author-image" src="http://7xn9a6.com1.z0.glb.clouddn.com/static/me.jpg" alt="Daisen Ho" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Daisen Ho</p>
         </div>
         <p class="site-description motion-element" itemprop="description"></p>
@@ -390,7 +392,7 @@ blog模版引擎hexo使用的是基于nodejs所开">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blog模版引擎hexo"><span class="nav-number">2.</span> <span class="nav-text">blog模版引擎hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#额外安装的插件："><span class="nav-number">2.0.1.</span> <span class="nav-text">额外安装的插件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集成的服务"><span class="nav-number">2.0.2.</span> <span class="nav-text">集成的服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blog模板主题NexT"><span class="nav-number">3.</span> <span class="nav-text">blog模板主题NexT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number">4.</span> <span class="nav-text">github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blog模版引擎hexo"><span class="nav-number">2.</span> <span class="nav-text">blog模版引擎hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#额外安装的插件："><span class="nav-number">2.0.1.</span> <span class="nav-text">额外安装的插件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集成的服务"><span class="nav-number">2.0.2.</span> <span class="nav-text">集成的服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blog模板主题NexT"><span class="nav-number">3.</span> <span class="nav-text">blog模板主题NexT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number">4.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片托管"><span class="nav-number">5.</span> <span class="nav-text">图片托管</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
